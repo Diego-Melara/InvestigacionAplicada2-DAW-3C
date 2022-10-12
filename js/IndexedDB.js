@@ -14,7 +14,7 @@ if(indexedDB && form ){
         db = request.result
         console.log('Create',db)
         const objectStore = db.createObjectStore('alumnos',{
-                keyPath: 'codEstudiante'
+                keyPath: 'codEstudiante' // valor por el que se ordenara la tabla
         })
     }
     request.onerror = () => {
@@ -63,7 +63,7 @@ if(indexedDB && form ){
     }
     form.addEventListener('submit', (e)=>{
         e.preventDefault()
-        const data = {
+        const data = { //se obtienen los datos del documento html
             nombreEstudiante: e.target.alumno.value,
             apellidosEstudiante: e.target.apellido.value,
             gradoEstudiante: e.target.grado.value,
